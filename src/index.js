@@ -6,8 +6,6 @@ import reportWebVitals from './reportWebVitals';
 
 
 
-import {disable} from "@fvilers/disable-react-devtools"
-if(process.env.NODE_ENV === 'production') disable();
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
