@@ -16,7 +16,7 @@ function App() {
     e.preventDefault();
     try {
      
-      const res = await axios.post("http://localhost:5500/api/item", { item: itemText,numb:number})
+      const res = await axios.post("https://backende-api.onrender.com/api/item", { item: itemText,numb:number})
       console.log(res);
     }
     catch (err) {
@@ -27,7 +27,7 @@ function App() {
   useEffect(() => {
     const getItem = async () => {
       try {
-        const res = await axios.get('http://localhost:5500/api/items')
+        const res = await axios.get('https://backende-api.onrender.com/api/items')
         setListItem(res.data);
       } catch (err) {
      console.log(err);
@@ -38,7 +38,7 @@ function App() {
 
   const deleteItem = async (id) => {
     try {
-      const res = await axios.delete(`http://localhost:5500/api/item/${id}`)
+      const res = await axios.delete(`https://backende-api.onrender.com/api/item/${id}`)
       const newList = listItems.filter(item => item._id !== id);
       setListItem(newList);
     } catch (err) {
@@ -56,7 +56,7 @@ function App() {
   const uppdateItem =async (e)=>{
     try{
  
-      const res=await axios.put(`http://localhost:5500/api/item/${isUpdating}`,{item:updateItemtext})
+      const res=await axios.put(`https://backende-api.onrender.com/api/item/${isUpdating}`,{item:updateItemtext})
       e.preventDefault();
       console.log(res.data)
       const updatedItemIndex=listItems.findIndex(item =>item._id===isUpdating);
